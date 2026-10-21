@@ -1,7 +1,7 @@
 """Measure the round's change: keep it as a commit if it pays off.
 
 The changed repository is rebuilt from scratch and tested. The change is
-committed, with its numbers, rule and hypothesis, if the metric dropped by
+committed, with its numbers, mode and hypothesis, if the metric dropped by
 at least ``threshold``, and reverted otherwise. Every round, kept or not,
 is a line of ``attempts.jsonl``.
 """
@@ -81,7 +81,8 @@ def judge(
         "-q",
         "-m",
         f"{proposal.idea}\n\n{numbers}\n"
-        f"Rule: {proposal.rule}\nHypothesis: {proposal.hypothesis}",
+        f"Mode: {'rules' if input.mode == 'exploit' else 'new idea'}\n"
+        f"Hypothesis: {proposal.hypothesis}",
     )
     diet.keep(input, repo, summary)
     entry["result"] = f"kept, {numbers}"

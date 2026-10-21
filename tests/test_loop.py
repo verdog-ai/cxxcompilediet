@@ -13,6 +13,7 @@ from verdog_runtime.declarations.agents import AgentReply, AgentRequest
 from verdog_runtime.declarations.ids import AgentProfileId, ProviderSessionId
 from verdog_runtime.interpreter import Dispatcher
 
+from verdog_ai.cxxcompilediet import diet
 from verdog_ai.cxxcompilediet.subroutines.main.impl import Options, Outcome
 from verdog_ai.cxxcompilediet.subroutines.propose.nodes.check.visit.change__check import (  # noqa: E501
     impl as check,
@@ -84,9 +85,9 @@ def tiny(tmp: Path) -> Path:
     return repo
 
 
-def proposal(rule: str, idea: str) -> str:
+def proposal(idea: str) -> str:
     return "Done.\n" + json.dumps(
-        {"repo": "tiny", "rule": rule, "idea": idea, "hypothesis": "less"}
+        {"repo": "tiny", "idea": idea, "hypothesis": "less"}
     )
 
 
@@ -131,11 +132,11 @@ def test_keep_revert_stagnation_explore_stop(tmp_path: Path) -> None:
     head = git(repo, "rev-parse", "HEAD")
     agent = Agent(
         [
-            (lighten, proposal("1", "drop the instantiations")),
-            (comment, proposal("2", "a comment")),
-            (comment, proposal("new", "another comment")),
+            (lighten, proposal("drop the instantiations")),
+            (comment, proposal("a comment")),
+            (comment, proposal("another comment")),
             (lambda _: None, "I am not sure."),
-            (comment, proposal("new", "a third comment")),
+            (comment, proposal("a third comment")),
             (patch, "Written."),
         ]
     )
@@ -172,7 +173,7 @@ def test_keep_revert_stagnation_explore_stop(tmp_path: Path) -> None:
     ]
     assert {a["lint"] for a in attempts} == {check.NO_LINT}
     assert attempts[0]["gain"] >= 0.2
-    assert "Apply one rule" in agent.prompts[0]
+    assert "applying the rules" in agent.prompts[0]
     assert "drop the instantiations -> kept" in agent.prompts[1]
     assert "Try one idea" in agent.prompts[2]
     assert "no JSON object" in agent.prompts[4]
@@ -180,7 +181,7 @@ def test_keep_revert_stagnation_explore_stop(tmp_path: Path) -> None:
     assert Path(outcome.rules).read_text() == "1. (measured: kept)\n"
     # One commit on the run's branch; the user's checkout is untouched.
     log = git(run / "tiny", "log", "--format=%B", f"{head.strip()}..HEAD")
-    assert "Rule: 1" in log and log.count("Hypothesis:") == 1
+    assert "Mode: rules" in log and log.count("Hypothesis:") == 1
     assert git(run / "tiny", "status", "--porcelain") == ""
     assert git(repo, "rev-parse", "HEAD") == head
     assert (repo / "heavy.cpp").read_text() == HEAVY
@@ -203,10 +204,16 @@ def test_lint_runs_only_with_a_plumbcheck_yml(
 
 def test_parse_reply() -> None:
     names = ["tiny"]
-    found, errors = check.parse(proposal("1", "x"), names)
-    assert errors == [] and found and found.rule == "1"
+    found, errors = check.parse(proposal("x"), names)
+    assert errors == [] and found and found.idea == "x"
     assert check.parse("nothing", names)[1] == [
         "The reply has no JSON object at its end."
     ]
     assert "lacks" in check.parse('{"repo": "tiny"}', names)[1][0]
-    assert "one of other" in check.parse(proposal("1", "x"), ["other"])[1][0]
+    assert "one of other" in check.parse(proposal("x"), ["other"])[1][0]
+
+
+def test_apply_rules_off_skips_the_rule_rounds() -> None:
+    config = diet.Config(rules="r.md", repos=(), stagnation=3)
+    assert diet.rule_rounds(config) == 3
+    assert diet.rule_rounds(replace(config, apply_rules=False)) == 0

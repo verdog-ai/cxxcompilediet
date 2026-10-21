@@ -8,8 +8,9 @@ checks the change, rebuilds that repository from scratch, runs its tests and
 keeps the change as a commit only if the chosen metric dropped by at least
 `threshold`:
 
-- **Rules first.** The agent applies a rule of your rules file (for example
-  yggdrasil's `docs/TEMPLATE_RULES.md`) where it should help most.
+- **Rules first.** The agent lowers the metric by applying your rules file
+  (for example yggdrasil's `docs/TEMPLATE_RULES.md`) where it helps most; it
+  does not have to name a rule. `apply_rules = false` skips this phase.
 - **New ideas on stagnation.** After `stagnation` rounds in a row without a
   kept change, it tries an idea the rules do not cover, with its hypothesis.
 - **Stop** after `max_changes` kept changes or `explore_failures` failed new
@@ -64,6 +65,7 @@ See `cxxcompilediet.example.toml`. Relative paths are relative to the file.
 | `threshold` | the relative drop of `metric` a change must bring to be kept |
 | `max_changes` | stop after this many kept changes |
 | `stagnation` | rounds without a kept change before new ideas |
+| `apply_rules` | `false` starts with new ideas (default `true`) |
 | `explore_failures` | stop after this many failed new ideas in a row |
 | `jobs` | the build's parallelism |
 | `[[repos]]` | `path`, `configure` and `test` commands; `{src}` is the run's worktree, `{build}` its build directory |
@@ -94,7 +96,7 @@ rules file.
 
 `propose` is one round's change: the agent's reply, then a check outside the
 agent's sandbox. The reply must end with a JSON object
-`{"repo", "rule", "idea", "hypothesis"}`; exactly one repository, the named
+`{"repo", "idea", "hypothesis"}`; exactly one repository, the named
 one, may have changed; and if that repository has a `plumbcheck.yml`, the
 files changed since the run's base must be free of findings
 (`plumbcheck lint`); without one the attempt records
@@ -105,8 +107,9 @@ Termination is certified by `verdog analyze` with three integer features:
 
 - `changes_left` (from `max_changes`) decreases on every kept change, and
   nothing in the loop increases it;
-- `rules_left` (from `stagnation`) decreases on every failed rule
-  application and is refilled only by a kept change;
+- `rules_left` (from `stagnation`, or 0 with `apply_rules = false`)
+  decreases on every failed round on the rules and is refilled only by a
+  kept change;
 - `ideas_left` (from `explore_failures`) decreases on every failed new idea
   and is refilled only by a kept change.
 

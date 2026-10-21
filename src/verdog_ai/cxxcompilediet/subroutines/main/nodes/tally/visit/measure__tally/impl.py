@@ -7,6 +7,7 @@ spends a round before new ideas, a failed new idea one of the new ideas.
 
 from verdog_runtime.declarations import FeatureSuccess
 
+from verdog_ai.cxxcompilediet import diet
 from verdog_ai.cxxcompilediet.subroutines.main.features.changes_left import (
     FEATURE as CHANGES_LEFT,
 )
@@ -27,7 +28,7 @@ def visit_impl(input: Input, state: State, context: Context, /) -> Result:
         assert changes, "The route proposes only with changes left."
         return FeatureSuccess(
             state=state.replace(CHANGES_LEFT, changes - 1)
-            .replace(RULES_LEFT, input.config.stagnation)
+            .replace(RULES_LEFT, diet.rule_rounds(input.config))
             .replace(IDEAS_LEFT, input.config.explore_failures)
         )
     budget = IDEAS_LEFT if input.mode == "explore" else RULES_LEFT

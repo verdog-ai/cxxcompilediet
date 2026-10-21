@@ -62,7 +62,7 @@ def parse(reply: str, names: list[str]) -> tuple[Proposal | None, list[str]]:
     if not isinstance(data, dict):
         return None, ["The reply's JSON is not an object."]
     fields = cast(dict[str, Any], data)
-    keys = ("repo", "rule", "idea", "hypothesis")
+    keys = ("repo", "idea", "hypothesis")
     missing = [k for k in keys if not isinstance(fields.get(k), str)]
     if missing:
         return None, [f"The reply's JSON lacks {', '.join(missing)}."]

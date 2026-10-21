@@ -7,6 +7,7 @@ metric = "peak_rss_mb"
 threshold = 0.02        # keep a change only if the metric drops by 2%
 max_changes = 10        # stop after this many kept changes
 stagnation = 3          # try new ideas after this many rounds without gain
+apply_rules = true      # false: new ideas from the first round
 explore_failures = 3    # stop after this many failed new ideas in a row
 jobs = 16
 

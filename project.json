@@ -1,7 +1,7 @@
 {
   "schema_version": 33,
   "package": "verdog_ai.cxxcompilediet",
-  "generated_from": "5ffc5e179ceedbf4396037fa651d77cd492f60ca24af2f5b42ee5efa11d2ef25",
+  "generated_from": "e09aa0de548171d9ac7b9c7cdd691908b31baa136214ac71ce01e26cb250cd3e",
   "workflows": [
     {
       "subroutine": "main",
@@ -208,8 +208,8 @@
     {
       "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/budget/visit/setup__budget/impl.py",
       "ownership": "user",
-      "size": 845,
-      "sha256": "cdf7ff0c500979493c5465e60424360c2ab1092eef3aefcc2b92a3976e26725c"
+      "size": 912,
+      "sha256": "4af4d08c49bfb3ff70aaa203415c6520f265a9c897139cb1946c0a9be50de4ed"
     },
     {
       "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/enter/__init__.py",
@@ -250,8 +250,8 @@
     {
       "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/measure/visit/propose__measure/impl.py",
       "ownership": "user",
-      "size": 2920,
-      "sha256": "a92aa353b493692788bddd0c1af0d2902af14ad1978853a1979dc51eef18456d"
+      "size": 2969,
+      "sha256": "80b1c163474db659d1a1a9a8d31c19f8f58f7981021d37f753c93ed50252e9c6"
     },
     {
       "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/patch/__init__.py",
@@ -424,8 +424,8 @@
     {
       "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/tally/visit/measure__tally/impl.py",
       "ownership": "user",
-      "size": 1378,
-      "sha256": "1a901fe77db3d86d0517c9ea8ecfde586db555d0e6bebddd8887d9978a1d5f84"
+      "size": 1427,
+      "sha256": "a1382a4bba985076a44bd94a2fea4861938c3b05e3a78d069d1d470162735cfb"
     },
     {
       "path": "src/verdog_ai/cxxcompilediet/subroutines/main/profiles/__init__.py",
@@ -616,8 +616,8 @@
     {
       "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/check/visit/change__check/impl.py",
       "ownership": "user",
-      "size": 3239,
-      "sha256": "b11c3b441a876b4b49d850bc26e4b73defb1ff26cb13dbd5e015167c2e63b0af"
+      "size": 3231,
+      "sha256": "c3c8cff37a2eace23dea2cf19d5c6255039852584f4cfd733b832f2d196a2b4b"
     },
     {
       "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/enter/__init__.py",

@@ -45,6 +45,7 @@ class Config:
     threshold: float = 0.02
     max_changes: int = 10
     stagnation: int = 3
+    apply_rules: bool = True
     explore_failures: int = 3
     jobs: int = 16
 
@@ -54,7 +55,6 @@ class Proposal:
     """What the agent says it changed, and why."""
 
     repo: str
-    rule: str
     idea: str
     hypothesis: str
 
@@ -73,6 +73,11 @@ class Diet:
     lint: str = ""
     rejected: str = ""
     kept: bool = False
+
+
+def rule_rounds(config: Config) -> int:
+    """Failed rounds allowed on the rules before new ideas; 0 skips them."""
+    return config.stagnation if config.apply_rules else 0
 
 
 def load(path: Path) -> Config:
