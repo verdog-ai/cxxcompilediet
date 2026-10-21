@@ -1,0 +1,45 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [ "setuptools>=61" ]
+
+[project]
+dependencies = [ "verdog-runtime>=0.1.7,<0.2" ]
+name = "verdog_ai.cxxcompilediet"
+requires-python = ">=3.12"
+version = "0.1.0"
+
+[tool.pyright]
+exclude = [ ".venv", "build", "dist", "**/__pycache__" ]
+extraPaths = [ "src" ]
+include = [ "src", "tests" ]
+pythonVersion = "3.12"
+reportAssertAlwaysTrue = "error"
+reportDuplicateImport = "error"
+reportImplicitOverride = "error"
+reportInvalidTypeForm = "error"
+reportInvalidTypeVarUse = "error"
+reportMissingImports = "error"
+reportMissingModuleSource = "error"
+reportMissingTypeStubs = "error"
+reportPrivateImportUsage = "error"
+reportUnknownArgumentType = "error"
+reportUnknownLambdaType = "error"
+reportUnknownMemberType = "error"
+reportUnknownParameterType = "error"
+reportUnknownVariableType = "error"
+reportUnnecessaryTypeIgnoreComment = "error"
+reportUnreachable = "error"
+reportUnusedImport = "error"
+reportUnusedVariable = "error"
+reportUntypedClassDecorator = "error"
+reportUntypedFunctionDecorator = "error"
+typeCheckingMode = "strict"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+    [tool.setuptools.package-data]
+    "*" = [ "prompt.md.j2", "prompts/*" ]
+
+    [tool.setuptools.packages.find]
+    where = [ "src" ]

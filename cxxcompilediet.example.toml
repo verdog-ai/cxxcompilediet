@@ -1,0 +1,32 @@
+# Copy next to the repositories and adjust; relative paths are relative to
+# this file. {src} is the run's worktree, {build} its build directory.
+rules = "yggdrasil/docs/TEMPLATE_RULES.md"
+# peak_rss_mb (summed RSS of parallel compiles), max_tu_rss_mb,
+# sum_tu_seconds or build_seconds; lower is better.
+metric = "peak_rss_mb"
+threshold = 0.02        # keep a change only if the metric drops by 2%
+max_changes = 10        # stop after this many kept changes
+stagnation = 3          # try new ideas after this many rounds without gain
+explore_failures = 3    # stop after this many failed new ideas in a row
+jobs = 16
+
+# <prefix>: where the dependencies of each library are installed.
+[[repos]]
+path = "yggdrasil"
+configure = "cmake -S {src} -B {build} -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=<prefix>"
+test = "ctest --test-dir {build} -j16 --output-on-failure"
+
+[[repos]]
+path = "loki"
+configure = "cmake -S {src} -B {build} -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=<prefix>"
+test = "ctest --test-dir {build} -j16 --output-on-failure"
+
+[[repos]]
+path = "tyr"
+configure = "cmake -S {src} -B {build} -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=<prefix>"
+test = "ctest --test-dir {build} -j16 --output-on-failure"
+
+[[repos]]
+path = "runir"
+configure = "cmake -S {src} -B {build} -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=<prefix>"
+test = "ctest --test-dir {build} -j16 --output-on-failure"

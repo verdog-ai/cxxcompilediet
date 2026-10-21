@@ -1,0 +1,1203 @@
+{
+  "schema_version": 33,
+  "package": "verdog_ai.cxxcompilediet",
+  "generated_from": "5ffc5e179ceedbf4396037fa651d77cd492f60ca24af2f5b42ee5efa11d2ef25",
+  "workflows": [
+    {
+      "subroutine": "main",
+      "profiles": [
+        {
+          "id": "agent",
+          "name": "agent",
+          "provider": "codex",
+          "options": {
+            "model": null,
+            "reasoning_effort": "high",
+            "extra_args": [
+              "-c",
+              "web_search=\"disabled\"",
+              "-c",
+              "features.plugins=false"
+            ]
+          }
+        }
+      ],
+      "sessions": [],
+      "profile_arguments": {
+        "agent": "agent"
+      },
+      "session_arguments": {}
+    }
+  ],
+  "externals": [],
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "ownership": "user",
+      "size": 6243,
+      "sha256": "456cd30eb54be9a15cd13f9e674b6980be5482a0a80180a947c4f3d933170df6"
+    },
+    {
+      "path": "pyproject.toml",
+      "ownership": "generated",
+      "size": 1274,
+      "sha256": "c2ba18bde0e654154273108054685495611114ce06db8bfad612829d3e143eb5"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/README.md",
+      "ownership": "user",
+      "size": 541,
+      "sha256": "bea3c3d22eba47b38b24d5df82d25834759b142c4e03a1454302d4b311a56d0a"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/__init__.py",
+      "ownership": "generated",
+      "size": 63,
+      "sha256": "09dc2956af896f131b41703b3b78101b4208d16cf4e9e6b9891bba4fa3d432dc"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/impl.py",
+      "ownership": "user",
+      "size": 208,
+      "sha256": "e2d7f2b3d2a34f736ea3ae0b0d3ea98bc2bc9eadfe9dc3221bb013015cc71b20"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/__init__.py",
+      "ownership": "generated",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/__init__.py",
+      "ownership": "generated",
+      "size": 3760,
+      "sha256": "e28cee769329e3a79d7484ee179e948df744350404eacb8964e7f7ac0a264b38"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/__init__.py",
+      "ownership": "generated",
+      "size": 1531,
+      "sha256": "5c09f7c91b8f700b33865a24222b0c22e8b018f6d3223a78f5b2aa050bdfa87c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/budget__route/__init__.py",
+      "ownership": "generated",
+      "size": 833,
+      "sha256": "84a376dfb489acda500be1356cad30ee3ce56ac6a3d7019c826f1ca9001192df"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/changes_done/__init__.py",
+      "ownership": "generated",
+      "size": 611,
+      "sha256": "7e78ba2d02f3590dece3ecca6df0eef0c0ed2b36d432ef5516df8a48b2250efc"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/enter__setup/__init__.py",
+      "ownership": "generated",
+      "size": 425,
+      "sha256": "84f3e4a1349aee2a6eb678e48e3465eb2644c70fd6b02ec7b77d5fd08515f85c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/exploit/__init__.py",
+      "ownership": "generated",
+      "size": 842,
+      "sha256": "d60aabf8b190b676b94036806017887b87545002eedb9cd02a5fc0dafa3eb9e6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/explore/__init__.py",
+      "ownership": "generated",
+      "size": 842,
+      "sha256": "8557b4a4a14472272a5f0ed0362b125f061fa8f0bc14bd3b91e2e698bd27bcc8"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/idea_failed/__init__.py",
+      "ownership": "generated",
+      "size": 593,
+      "sha256": "ef9b6ee64c986e39a7b6fcb61e4dfda502b42532fa935599a72af7d3228e48d6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/ideas_done/__init__.py",
+      "ownership": "generated",
+      "size": 722,
+      "sha256": "e74c634980a5a73b1307804110374a0bda47ad3464856191ed5edc1f1a3926ae"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/kept/__init__.py",
+      "ownership": "generated",
+      "size": 806,
+      "sha256": "b1112c961b66608de40855e5960de35299b225a7bab537ae56826471c9a4adaa"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/measure__tally/__init__.py",
+      "ownership": "generated",
+      "size": 433,
+      "sha256": "332b2b1630a8cab0d628f39866abc9719ebb895440a04ce73a68ac472e2d3278"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/patch__exit/__init__.py",
+      "ownership": "generated",
+      "size": 575,
+      "sha256": "33ec80fb1af63f9d8403acd5714ae11e3af8c00fb7aad479e830212073586c99"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/propose__measure/__init__.py",
+      "ownership": "generated",
+      "size": 443,
+      "sha256": "6469787a997dc673da05ae7a0467d036c45de8e13d9ae2e61537d8b004cd37a6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/rule_failed/__init__.py",
+      "ownership": "generated",
+      "size": 593,
+      "sha256": "69ba9f0885b063ec1c9a118bc9da829a6e172470d547f18ddad746c705ed6fd5"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/edges/setup__budget/__init__.py",
+      "ownership": "generated",
+      "size": 430,
+      "sha256": "e874a1d32be39c21024bd855c7d2c9b8639e54e07f0cf5cf1ece09596a92b151"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/features/__init__.py",
+      "ownership": "generated",
+      "size": 423,
+      "sha256": "5f24e0b9f06f49e55a3856a3d730f94e61897d819c99a51d370e98ebccb338bf"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/features/changes_left/__init__.py",
+      "ownership": "generated",
+      "size": 404,
+      "sha256": "2299232423f0fc7aeb70623e6435fa7c2fd54a9e3c0d2f26679e04c5ac125350"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/features/ideas_left/__init__.py",
+      "ownership": "generated",
+      "size": 420,
+      "sha256": "8750bf687f51d41ab0f798d5b46b029950f27eb883350a7bcb0016574012ff9c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/features/rules_left/__init__.py",
+      "ownership": "generated",
+      "size": 421,
+      "sha256": "ab390bcb996a028e6f1df32187d511028979449bd284b149e3b14117d48565ff"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/impl.py",
+      "ownership": "user",
+      "size": 712,
+      "sha256": "d528de56f39383d747fc91c8cf7b95b9d311ffbc1bb4d23727a117a978f1cbf6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/__init__.py",
+      "ownership": "generated",
+      "size": 736,
+      "sha256": "d58effcaa6f66e03adc1f77e4e3d36a2d319e33b15a342728c73a7963fbb6c15"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/budget/__init__.py",
+      "ownership": "generated",
+      "size": 275,
+      "sha256": "9a9fe91173279f3de3161adf34755476bb60ea4e588712e4f3252f84c25136a1"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/budget/visit/setup__budget/__init__.py",
+      "ownership": "generated",
+      "size": 652,
+      "sha256": "769952852cbf32c873d4f345399357fad04b865eca30ec3e4c7af50194d372b6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/budget/visit/setup__budget/impl.py",
+      "ownership": "user",
+      "size": 845,
+      "sha256": "cdf7ff0c500979493c5465e60424360c2ab1092eef3aefcc2b92a3976e26725c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/enter/__init__.py",
+      "ownership": "generated",
+      "size": 208,
+      "sha256": "cf729709b6b54d095c3e3ade073d0418d1ddd6cfae6dd687e9af6464de6c53a6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/exit/__init__.py",
+      "ownership": "generated",
+      "size": 207,
+      "sha256": "55f48c85c95632e8db58ed3c0475b77ce517d77ace9bb536bda6a125d5255fd2"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/failure/__init__.py",
+      "ownership": "generated",
+      "size": 210,
+      "sha256": "c1836e6411e693171769ebe65292109d1244bce3c8d95f6a811129e337fc4559"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/measure/__init__.py",
+      "ownership": "generated",
+      "size": 345,
+      "sha256": "827ee32abdb6df056d9db132344a3e173a0649d3387e50193c72fae9c37f84a4"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/measure/impl.py",
+      "ownership": "user",
+      "size": 172,
+      "sha256": "3654285a782aa877178844f8c8e8ab556085e26332a86f36198cf2767d8b3856"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/measure/visit/propose__measure/__init__.py",
+      "ownership": "generated",
+      "size": 613,
+      "sha256": "2b1b41cef922fd89aaf58d741a8ea9097871936126fb15f06819ec056fe0b04b"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/measure/visit/propose__measure/impl.py",
+      "ownership": "user",
+      "size": 2920,
+      "sha256": "a92aa353b493692788bddd0c1af0d2902af14ad1978853a1979dc51eef18456d"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/patch/__init__.py",
+      "ownership": "generated",
+      "size": 420,
+      "sha256": "9919f6bcbded62f43482d3db3d029e7c32aa011797ab2a0b25a43730d200939e"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/patch/impl.py",
+      "ownership": "user",
+      "size": 1370,
+      "sha256": "e24157eec866ecd5863a6d2b305ca1555849719110a4ff427d0e4a8b0a9bf3b9"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/patch/visit/changes_done/__init__.py",
+      "ownership": "generated",
+      "size": 619,
+      "sha256": "f0c063e6a24acd4ccb04f1ca0000f4707b62eac78dddedbbb0551d549210c3c6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/patch/visit/changes_done/impl.py",
+      "ownership": "user",
+      "size": 239,
+      "sha256": "b3bfdb31491b355de29f6d35673344fb12e7a321b32f50cacad109d7d393fdcf"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/patch/visit/ideas_done/__init__.py",
+      "ownership": "generated",
+      "size": 619,
+      "sha256": "f0c063e6a24acd4ccb04f1ca0000f4707b62eac78dddedbbb0551d549210c3c6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/patch/visit/ideas_done/impl.py",
+      "ownership": "user",
+      "size": 239,
+      "sha256": "b3bfdb31491b355de29f6d35673344fb12e7a321b32f50cacad109d7d393fdcf"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/propose/__init__.py",
+      "ownership": "generated",
+      "size": 1129,
+      "sha256": "f9c42bdbebddf1d58a056e2679e879e7afbf21c136c8a6bb9bb7d926faa9d587"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/propose/impl.py",
+      "ownership": "user",
+      "size": 172,
+      "sha256": "3654285a782aa877178844f8c8e8ab556085e26332a86f36198cf2767d8b3856"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/propose/visit/exploit/__init__.py",
+      "ownership": "generated",
+      "size": 834,
+      "sha256": "f4fb77fedb4474f41e7a98e52790d258abca95a2a1086f98fde745b019be0dab"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/propose/visit/exploit/impl.py",
+      "ownership": "user",
+      "size": 353,
+      "sha256": "a6cf96661514e48ff26d669af6faa2442c9bfe6527dea51a781b6b0e8887818e"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/propose/visit/explore/__init__.py",
+      "ownership": "generated",
+      "size": 834,
+      "sha256": "f4fb77fedb4474f41e7a98e52790d258abca95a2a1086f98fde745b019be0dab"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/propose/visit/explore/impl.py",
+      "ownership": "user",
+      "size": 353,
+      "sha256": "a28def3dbbb5bc656952c3845c962f0f1bcff7c247a4627f11b52922a1c439af"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/__init__.py",
+      "ownership": "generated",
+      "size": 341,
+      "sha256": "ac6feb693b46b3bb48fdcfb05a23b8bc2c544402732ba43e5e685496a381c9cf"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/impl.py",
+      "ownership": "user",
+      "size": 172,
+      "sha256": "3654285a782aa877178844f8c8e8ab556085e26332a86f36198cf2767d8b3856"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/visit/budget__route/__init__.py",
+      "ownership": "generated",
+      "size": 609,
+      "sha256": "9e85484af3891db4a43e5e1a90d08b5ae7ab914cfde3a78241e4fe980cb3e7e5"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/visit/budget__route/impl.py",
+      "ownership": "user",
+      "size": 216,
+      "sha256": "f982649cc58b77366fa170a22e2b38cca70cb0027da5b375cbedb1fd69dc50bb"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/visit/idea_failed/__init__.py",
+      "ownership": "generated",
+      "size": 611,
+      "sha256": "7cbb405265b8e156b16050a5f7ec4de7572f7b4c0406c32e9ce0cbffc7f0912d"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/visit/idea_failed/impl.py",
+      "ownership": "user",
+      "size": 216,
+      "sha256": "f982649cc58b77366fa170a22e2b38cca70cb0027da5b375cbedb1fd69dc50bb"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/visit/kept/__init__.py",
+      "ownership": "generated",
+      "size": 611,
+      "sha256": "7cbb405265b8e156b16050a5f7ec4de7572f7b4c0406c32e9ce0cbffc7f0912d"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/visit/kept/impl.py",
+      "ownership": "user",
+      "size": 216,
+      "sha256": "f982649cc58b77366fa170a22e2b38cca70cb0027da5b375cbedb1fd69dc50bb"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/visit/rule_failed/__init__.py",
+      "ownership": "generated",
+      "size": 611,
+      "sha256": "7cbb405265b8e156b16050a5f7ec4de7572f7b4c0406c32e9ce0cbffc7f0912d"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/route/visit/rule_failed/impl.py",
+      "ownership": "user",
+      "size": 216,
+      "sha256": "f982649cc58b77366fa170a22e2b38cca70cb0027da5b375cbedb1fd69dc50bb"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/setup/__init__.py",
+      "ownership": "generated",
+      "size": 341,
+      "sha256": "6cdc8d581281a603370a38517569afb703ab1fc2fef46371e57817b1d7b5a775"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/setup/impl.py",
+      "ownership": "user",
+      "size": 172,
+      "sha256": "3654285a782aa877178844f8c8e8ab556085e26332a86f36198cf2767d8b3856"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/setup/visit/enter__setup/__init__.py",
+      "ownership": "generated",
+      "size": 587,
+      "sha256": "0e792414018e7cd0e9d22b652cc72571972b4ca2c02bd58c2dcd111e95199ba6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/setup/visit/enter__setup/impl.py",
+      "ownership": "user",
+      "size": 2211,
+      "sha256": "012abeebf9bb2911180684297a2d27ae4c53544abe7359f6258e3480187feafd"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/tally/__init__.py",
+      "ownership": "generated",
+      "size": 273,
+      "sha256": "c1a63d9192cecc4f5dc975ca3af3976da53bfcc11f5388bfd5749f7f09eb5886"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/tally/visit/measure__tally/__init__.py",
+      "ownership": "generated",
+      "size": 654,
+      "sha256": "47074377f63effd00fb0f7252f2a7fcfb7da424a7e4d33f57218aff8395a3268"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/nodes/tally/visit/measure__tally/impl.py",
+      "ownership": "user",
+      "size": 1378,
+      "sha256": "1a901fe77db3d86d0517c9ea8ecfde586db555d0e6bebddd8887d9978a1d5f84"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/profiles/__init__.py",
+      "ownership": "generated",
+      "size": 216,
+      "sha256": "b7bdf0e927ec9bab0d2225a4d8fd909545f49db4e22081a205e5b5c22e333851"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/profiles/agent/__init__.py",
+      "ownership": "generated",
+      "size": 428,
+      "sha256": "62538916b84d013d2b0fdd6709423fcb50bdb1face14c39dd520e11588c6b8a9"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/sessions/__init__.py",
+      "ownership": "generated",
+      "size": 195,
+      "sha256": "a85c44ae4abe407f39427bf8b837f6c950d3110f5d71c2a415c6c6136576b2e2"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/sessions/patching/__init__.py",
+      "ownership": "generated",
+      "size": 279,
+      "sha256": "56974ea1e06aa8d6a9cead4ddeddc6ba012b7feb54a188ef49f86641509b8b5c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/subroutines/__init__.py",
+      "ownership": "generated",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/main/workflows/__init__.py",
+      "ownership": "generated",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/__init__.py",
+      "ownership": "generated",
+      "size": 3204,
+      "sha256": "b0709a4c2b561b23f8187481531b5f11302ad4954e956931ecaf9e1fd8151366"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/edges/__init__.py",
+      "ownership": "generated",
+      "size": 765,
+      "sha256": "c2b1827efb791410525c05a0f703d3664ca277cc0b559f58b244f10c9957dda1"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/edges/begin__change/__init__.py",
+      "ownership": "generated",
+      "size": 615,
+      "sha256": "d054ecb888659fc8cc03a2766538ceca6789de84be86248a657b974c0f2266c2"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/edges/change__check/__init__.py",
+      "ownership": "generated",
+      "size": 435,
+      "sha256": "7f39716a68aa25f252bb3fee197b8987ce44d5f48ebafbbce333a26a26f6c3f8"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/edges/check__verdict/__init__.py",
+      "ownership": "generated",
+      "size": 441,
+      "sha256": "15986683ab964e050d824ce015a1d22fd2e2904958965b21c94bb0481b1f7198"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/edges/enter__begin/__init__.py",
+      "ownership": "generated",
+      "size": 431,
+      "sha256": "631c7828252b9f322387716135cd3f9533085e53944cf9e3350d1b854ca8940c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/edges/repair/__init__.py",
+      "ownership": "generated",
+      "size": 913,
+      "sha256": "d5d12c46dacd4030f91c7f2193783fc9cad85ee022c8a3e6ee24b87b1d1e084d"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/edges/verdict__exit/__init__.py",
+      "ownership": "generated",
+      "size": 749,
+      "sha256": "6a2e8326cf2f30a431e39e81f59123f6a621a6d4f747f93643d81998598acdaf"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/features/__init__.py",
+      "ownership": "generated",
+      "size": 290,
+      "sha256": "71550267a4eae7c79e10b4916ebd648e71b0776a898cf26ea5fe2de39175ee25"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/features/repairs_left/__init__.py",
+      "ownership": "generated",
+      "size": 398,
+      "sha256": "a4fdfbb9c754ee630552186e8f0e94107d5b708aa5abf78867038bbf0c99c367"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/features/valid/__init__.py",
+      "ownership": "generated",
+      "size": 381,
+      "sha256": "559c75dc55dc6cfd94c8e8b8d078240b450ca716de7639d63a43542658b1b10c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/impl.py",
+      "ownership": "user",
+      "size": 265,
+      "sha256": "6b81267e062c94effe25bf360992e0a7ffd60f9e1bc1443a06c935882cf57d7d"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/__init__.py",
+      "ownership": "generated",
+      "size": 451,
+      "sha256": "8b1fa96fa02013ee859ebf666561e0c3408b46fa5c469870f223dcb79d71c4f3"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/begin/__init__.py",
+      "ownership": "generated",
+      "size": 276,
+      "sha256": "e6923e06efb1d2066a42d16d994f1de5ec44351c48ea418c1ad89bd9e8938382"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/begin/visit/enter__begin/__init__.py",
+      "ownership": "generated",
+      "size": 639,
+      "sha256": "162681706f66a21bab794d135904d87c6dbeca903cfcb9e212acfd4204a4f4d6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/begin/visit/enter__begin/impl.py",
+      "ownership": "user",
+      "size": 510,
+      "sha256": "4f011b917b8711ea78da1e440d42a1e94471291c1a708558c527a07141c7e7cb"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/change/__init__.py",
+      "ownership": "generated",
+      "size": 429,
+      "sha256": "b59617759e869b4268dc1d66860d1dc351d2b308e3e88788f4d805165ab71919"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/change/impl.py",
+      "ownership": "user",
+      "size": 172,
+      "sha256": "3654285a782aa877178844f8c8e8ab556085e26332a86f36198cf2767d8b3856"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/change/visit/begin__change/__init__.py",
+      "ownership": "generated",
+      "size": 607,
+      "sha256": "559f57c261aef92f1129fd9eb284831b6adafaddd5054acce38b9153fd88f5ef"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/change/visit/begin__change/impl.py",
+      "ownership": "user",
+      "size": 1043,
+      "sha256": "392cde2a12bc2aa780b7e83e4ef87e75a8f076cefdc997b59d2cb28013cdb5c6"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/change/visit/repair/__init__.py",
+      "ownership": "generated",
+      "size": 629,
+      "sha256": "ce5c78cbd8ce53401fdaa266a9dc9f1ee1ef9b45c9602ac1398de355b9881a77"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/change/visit/repair/impl.py",
+      "ownership": "user",
+      "size": 683,
+      "sha256": "0f88f0023c1b77dcf03d46dc05743dea69e080bdbdbc51d38e6bd293ae4ce8a0"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/check/__init__.py",
+      "ownership": "generated",
+      "size": 344,
+      "sha256": "13c2f0de1b0616241a4b19e2749c611b81398c103ebe12e94d23eb4908d2ea4c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/check/impl.py",
+      "ownership": "user",
+      "size": 294,
+      "sha256": "8e26aacafecfeb564613315df22fd2962b9db5153ed55df8b6f2320ba33a8819"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/check/visit/change__check/__init__.py",
+      "ownership": "generated",
+      "size": 619,
+      "sha256": "6bcb9b8b6b1490d8ef73a438b242102574eebec795a4bad1123234f029b6f0a3"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/check/visit/change__check/impl.py",
+      "ownership": "user",
+      "size": 3239,
+      "sha256": "b11c3b441a876b4b49d850bc26e4b73defb1ff26cb13dbd5e015167c2e63b0af"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/enter/__init__.py",
+      "ownership": "generated",
+      "size": 211,
+      "sha256": "d25eec035407723a090c1a9c82e7757ec4c746074d65354ff51533701221f501"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/exit/__init__.py",
+      "ownership": "generated",
+      "size": 210,
+      "sha256": "b5814479f7ac18a1f8630c0b4fe55082d0ff6cbe37d483fcb20f9e72232fdc52"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/failure/__init__.py",
+      "ownership": "generated",
+      "size": 213,
+      "sha256": "4e5a39d1b4ec78928a24f8c27115982e414375734b402c163a73b7e9c3316eee"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/verdict/__init__.py",
+      "ownership": "generated",
+      "size": 280,
+      "sha256": "f75d1ec99319bbf334c8028db7aa6f0767d6d3dc1734becc992d811a80c95b20"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/verdict/visit/check__verdict/__init__.py",
+      "ownership": "generated",
+      "size": 661,
+      "sha256": "131de88ece249a6ebbf919e682f3771032834a3ae551a034f9c2f2cf74895c1f"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/nodes/verdict/visit/check__verdict/impl.py",
+      "ownership": "user",
+      "size": 799,
+      "sha256": "376e6562a02bd5d73ba8e6e5f34c550486b69c81070d8b004b0fe9a95c7b8ea3"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/profiles/__init__.py",
+      "ownership": "generated",
+      "size": 219,
+      "sha256": "92bc7fc04e84d652a9f3cc7d7a6cb74c3420d36ceeaf24b5e6d2753ea4f052f7"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/profiles/agent/__init__.py",
+      "ownership": "generated",
+      "size": 431,
+      "sha256": "2b726623a3bdd4cd7212cb9dad5b221ca989afa41894a3eb847085558151ad25"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/sessions/__init__.py",
+      "ownership": "generated",
+      "size": 210,
+      "sha256": "7f487ba37bf1efcb8f751b68cafbd753b4138b31fafe4778afeb191625c41b6c"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/sessions/conversation/__init__.py",
+      "ownership": "generated",
+      "size": 289,
+      "sha256": "aebc24e4d398d60113c8ac0dc561b434c575496555aa55a9c2b8820433f030e8"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/subroutines/__init__.py",
+      "ownership": "generated",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/subroutines/propose/workflows/__init__.py",
+      "ownership": "generated",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/workflows/__init__.py",
+      "ownership": "generated",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/workflows/main/__init__.py",
+      "ownership": "generated",
+      "size": 1518,
+      "sha256": "8ab042c77c585a3ef9a5835b5bfb6a58eba515a29a39efaf1817cfe96d3decdc"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/workflows/main/bindings/__init__.py",
+      "ownership": "generated",
+      "size": 254,
+      "sha256": "062beb71dc2d18bcd5d22df493253dc173707e3ad716871016af4a53b1becde8"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/workflows/main/profiles/__init__.py",
+      "ownership": "generated",
+      "size": 325,
+      "sha256": "0721b025a8f34f650ef26dc62486fb61ab5fcdde7c3ff493d840d5101d01d300"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/workflows/main/profiles/agent/__init__.py",
+      "ownership": "generated",
+      "size": 289,
+      "sha256": "bddf3fe0105b148e7cc5303e0c35b9431f145a94dd445d1ff146fc05ebef3473"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/workflows/main/requirements.txt",
+      "ownership": "user",
+      "size": 122,
+      "sha256": "f64e26bcf070ce4d3a8c3afb8fc610c8d98276754d75ba397c21c28765f99a25"
+    },
+    {
+      "path": "src/verdog_ai/cxxcompilediet/workflows/main/sessions/__init__.py",
+      "ownership": "generated",
+      "size": 47,
+      "sha256": "89b438405ab711a5ddd14173a8f778af6b2979da47ab3386dd09d88e2f2e8c01"
+    }
+  ],
+  "editor": {
+    "layouts": {}
+  },
+  "extensions": {},
+  "subroutines": [
+    {
+      "id": "main",
+      "name": "cxxcompilediet",
+      "ports": {
+        "enter": "enter",
+        "exit": "exit",
+        "failure": "failure"
+      },
+      "features": [
+        {
+          "id": "changes_left",
+          "label": "changes_left",
+          "description": "Changes the run may still keep (max_changes minus the kept ones).",
+          "kind": "integer"
+        },
+        {
+          "id": "rules_left",
+          "label": "rules_left",
+          "description": "Rounds without a kept change before new ideas (stagnation); refilled by a kept change.",
+          "kind": "integer"
+        },
+        {
+          "id": "ideas_left",
+          "label": "ideas_left",
+          "description": "New ideas that may still fail in a row (explore_failures); refilled by a kept change.",
+          "kind": "integer"
+        }
+      ],
+      "profiles": [],
+      "profile_parameters": [
+        {
+          "id": "agent",
+          "name": "agent"
+        }
+      ],
+      "sessions": [
+        {
+          "id": "patching",
+          "name": "patching",
+          "persistent": false
+        }
+      ],
+      "session_parameters": [],
+      "nodes": [
+        {
+          "id": "enter",
+          "name": "enter",
+          "kind": "enter",
+          "operation": {}
+        },
+        {
+          "id": "exit",
+          "name": "exit",
+          "kind": "exit",
+          "operation": {}
+        },
+        {
+          "id": "failure",
+          "name": "failure",
+          "kind": "failure",
+          "operation": {}
+        },
+        {
+          "id": "budget",
+          "name": "budget",
+          "kind": "feature",
+          "operation": {}
+        },
+        {
+          "id": "measure",
+          "name": "measure",
+          "kind": "python",
+          "operation": {}
+        },
+        {
+          "id": "patch",
+          "name": "patch",
+          "kind": "agent",
+          "operation": {
+            "profile": "agent",
+            "session": "patching"
+          }
+        },
+        {
+          "id": "propose",
+          "name": "propose",
+          "kind": "subroutine_call",
+          "operation": {
+            "target": "propose",
+            "profile_arguments": {
+              "agent": "agent"
+            },
+            "session_arguments": {}
+          }
+        },
+        {
+          "id": "route",
+          "name": "route",
+          "kind": "python",
+          "operation": {}
+        },
+        {
+          "id": "setup",
+          "name": "setup",
+          "kind": "python",
+          "operation": {}
+        },
+        {
+          "id": "tally",
+          "name": "tally",
+          "kind": "feature",
+          "operation": {}
+        }
+      ],
+      "edges": [
+        {
+          "id": "budget__route",
+          "name": "budget to route",
+          "source": "budget",
+          "target": "route",
+          "conditions": [],
+          "effects": [
+            {
+              "feature_id": "changes_left",
+              "observation": "unconstrained"
+            },
+            {
+              "feature_id": "rules_left",
+              "observation": "unconstrained"
+            },
+            {
+              "feature_id": "ideas_left",
+              "observation": "unconstrained"
+            }
+          ]
+        },
+        {
+          "id": "changes_done",
+          "name": "changes done",
+          "source": "route",
+          "target": "patch",
+          "conditions": [
+            {
+              "feature_id": "changes_left",
+              "observation": "equal_zero"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "enter__setup",
+          "name": "enter to setup",
+          "source": "enter",
+          "target": "setup",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "exploit",
+          "name": "apply a rule",
+          "source": "route",
+          "target": "propose",
+          "conditions": [
+            {
+              "feature_id": "changes_left",
+              "observation": "greater_zero"
+            },
+            {
+              "feature_id": "ideas_left",
+              "observation": "greater_zero"
+            },
+            {
+              "feature_id": "rules_left",
+              "observation": "greater_zero"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "explore",
+          "name": "try a new idea",
+          "source": "route",
+          "target": "propose",
+          "conditions": [
+            {
+              "feature_id": "changes_left",
+              "observation": "greater_zero"
+            },
+            {
+              "feature_id": "ideas_left",
+              "observation": "greater_zero"
+            },
+            {
+              "feature_id": "rules_left",
+              "observation": "equal_zero"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "idea_failed",
+          "name": "idea failed",
+          "source": "tally",
+          "target": "route",
+          "conditions": [],
+          "effects": [
+            {
+              "feature_id": "ideas_left",
+              "observation": "decreases"
+            }
+          ]
+        },
+        {
+          "id": "ideas_done",
+          "name": "ideas done",
+          "source": "route",
+          "target": "patch",
+          "conditions": [
+            {
+              "feature_id": "changes_left",
+              "observation": "greater_zero"
+            },
+            {
+              "feature_id": "ideas_left",
+              "observation": "equal_zero"
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "kept",
+          "name": "change kept",
+          "source": "tally",
+          "target": "route",
+          "conditions": [],
+          "effects": [
+            {
+              "feature_id": "changes_left",
+              "observation": "decreases"
+            },
+            {
+              "feature_id": "rules_left",
+              "observation": "unconstrained"
+            },
+            {
+              "feature_id": "ideas_left",
+              "observation": "unconstrained"
+            }
+          ]
+        },
+        {
+          "id": "measure__tally",
+          "name": "measure to tally",
+          "source": "measure",
+          "target": "tally",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "patch__exit",
+          "name": "patch to exit",
+          "source": "patch",
+          "target": "exit",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "propose__measure",
+          "name": "propose to measure",
+          "source": "propose",
+          "target": "measure",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "rule_failed",
+          "name": "rule failed",
+          "source": "tally",
+          "target": "route",
+          "conditions": [],
+          "effects": [
+            {
+              "feature_id": "rules_left",
+              "observation": "decreases"
+            }
+          ]
+        },
+        {
+          "id": "setup__budget",
+          "name": "setup to budget",
+          "source": "setup",
+          "target": "budget",
+          "conditions": [],
+          "effects": []
+        }
+      ],
+      "workflows": [],
+      "subroutines": []
+    },
+    {
+      "id": "propose",
+      "name": "propose",
+      "ports": {
+        "enter": "enter",
+        "exit": "exit",
+        "failure": "failure"
+      },
+      "features": [
+        {
+          "id": "valid",
+          "label": "valid",
+          "description": "Whether the check found nothing in the latest reply.",
+          "kind": "boolean"
+        },
+        {
+          "id": "repairs_left",
+          "label": "repairs_left",
+          "description": "Replies the check may still send back with its findings.",
+          "kind": "integer"
+        }
+      ],
+      "profiles": [],
+      "profile_parameters": [
+        {
+          "id": "agent",
+          "name": "agent"
+        }
+      ],
+      "sessions": [
+        {
+          "id": "conversation",
+          "name": "conversation",
+          "persistent": true
+        }
+      ],
+      "session_parameters": [],
+      "nodes": [
+        {
+          "id": "enter",
+          "name": "enter",
+          "kind": "enter",
+          "operation": {}
+        },
+        {
+          "id": "exit",
+          "name": "exit",
+          "kind": "exit",
+          "operation": {}
+        },
+        {
+          "id": "failure",
+          "name": "failure",
+          "kind": "failure",
+          "operation": {}
+        },
+        {
+          "id": "begin",
+          "name": "begin",
+          "kind": "feature",
+          "operation": {}
+        },
+        {
+          "id": "change",
+          "name": "change",
+          "kind": "agent",
+          "operation": {
+            "profile": "agent",
+            "session": "conversation"
+          }
+        },
+        {
+          "id": "check",
+          "name": "check",
+          "kind": "python",
+          "operation": {}
+        },
+        {
+          "id": "verdict",
+          "name": "verdict",
+          "kind": "feature",
+          "operation": {}
+        }
+      ],
+      "edges": [
+        {
+          "id": "begin__change",
+          "name": "begin to change",
+          "source": "begin",
+          "target": "change",
+          "conditions": [],
+          "effects": [
+            {
+              "feature_id": "repairs_left",
+              "observation": "unconstrained"
+            }
+          ]
+        },
+        {
+          "id": "change__check",
+          "name": "change to check",
+          "source": "change",
+          "target": "check",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "check__verdict",
+          "name": "check to verdict",
+          "source": "check",
+          "target": "verdict",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "enter__begin",
+          "name": "enter to begin",
+          "source": "enter",
+          "target": "begin",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "repair",
+          "name": "repair",
+          "source": "verdict",
+          "target": "change",
+          "conditions": [
+            {
+              "feature_id": "repairs_left",
+              "observation": "greater_zero"
+            }
+          ],
+          "effects": [
+            {
+              "feature_id": "valid",
+              "observation": "negative"
+            },
+            {
+              "feature_id": "repairs_left",
+              "observation": "decreases"
+            }
+          ]
+        },
+        {
+          "id": "verdict__exit",
+          "name": "verdict to exit",
+          "source": "verdict",
+          "target": "exit",
+          "conditions": [],
+          "effects": [
+            {
+              "feature_id": "valid",
+              "observation": "positive"
+            }
+          ]
+        }
+      ],
+      "workflows": [],
+      "subroutines": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# The repository's own checks and tests; plumbcheck only lints (standards.yml).
+# pyright and pytest use the first workflow environment that has pytest,
+# else the first one (pytest added on top).
+name: tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - run: uv tool install verdog-cli
+      - run: verdog sync
+      - run: verdog check
+      - name: The environment
+        run: |
+          for p in .verdog/environments/*/bin/python; do
+            if "$p" -c 'import pytest' 2>/dev/null; then echo "PY=$p" >> "$GITHUB_ENV"; exit; fi
+          done
+          echo "PY=$(ls .verdog/environments/*/bin/python | head -1)" >> "$GITHUB_ENV"
+      - run: uv tool run pyright --pythonpath "$PY"
+      - run: test ! -d tests || uv run --no-project --python "$PY" --with pytest python -m pytest -q -p no:cacheprovider tests

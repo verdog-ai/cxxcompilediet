@@ -1,0 +1,15 @@
+# plumbcheck's configuration (https://github.com/drexlerd/plumbcheck): only
+# what differs from its defaults; every linter of its catalogue runs on the
+# files it checks. The linters read this repository's own configurations.
+
+# A Verdog project's project.json lists the files its compiler generates;
+# lint never checks them.
+GENERATED:
+  file: project.json
+  list: sources
+  path: path
+  where: {ownership: generated}
+
+# Only the syntax (S0) and one statement per line (S7); j2lint's layout
+# rules (spacing, indentation, variable names) are not ours.
+J2LINT_ARGUMENTS: [--ignore, S1, S2, S3, S4, S5, S6, V1, V2, --]

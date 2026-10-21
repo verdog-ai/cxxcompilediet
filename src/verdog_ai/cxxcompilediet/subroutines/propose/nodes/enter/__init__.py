@@ -1,0 +1,5 @@
+from typing import Final
+from verdog_runtime.declarations import PortDefinition
+from verdog_ai.cxxcompilediet.subroutines.propose import NODE_IDS
+
+PORT: Final[PortDefinition] = PortDefinition(id=NODE_IDS.enter)

@@ -1,0 +1,36 @@
+You lower the compile cost of C++ libraries, measured as {{ config.metric }} (lower is better) of a clean build. Each repository is a git worktree of its own, with its build directory:
+
+{% for repo in repos %}
+- {{ repo.name }}: {{ repo.tree }} (build directory: {{ repo.build }})
+{% endfor %}
+
+The rules: {{ config.rules }}
+
+{% if mode == "explore" %}
+The last {{ config.stagnation }} rounds brought no significant gain from the rules. Try one idea that the rules do not cover, and state its hypothesis.
+{% else %}
+Apply one rule of the rules file where it should lower {{ config.metric }} the most. Name the rule.
+{% endif %}
+
+Make exactly one change, in one repository, that keeps the behaviour and the public API. Do not commit. Check that the translation units you touch still compile (their commands are in compile_commands.json of the repository's build directory). After your reply the change is linted with the repository's plumbcheck configuration, rebuilt from scratch and tested; it is kept only if {{ config.metric }} drops by at least {{ "%.1f" | format(config.threshold * 100) }}%.
+
+Reply with one JSON object and nothing after it:
+
+{"repo": "<name>", "rule": "<rule number, or new>", "idea": "<one line>", "hypothesis": "<why it lowers {{ config.metric }}>"}
+
+Heaviest commands of the current build per repository (max RSS, time, output):
+
+{% for repo in repos %}
+{{ repo.name }}:
+{% for r in repo.heaviest %}
+{{ "%8.0f MB %7.1f s  %s" | format(r.rss_mb, r.end - r.start, r.out) }}
+{% endfor %}
+
+{% endfor %}
+Earlier attempts, kept or not (do not repeat a failed one unless you name what is different):
+
+{% for a in attempts %}
+- {{ a.repo | default("?") }}, rule {{ a.rule | default("?") }}: {{ a.idea | default("?") }} -> {{ a.result }}
+{% else %}
+(none)
+{% endfor %}
