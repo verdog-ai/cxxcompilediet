@@ -1,7 +1,7 @@
 {
   "schema_version": 33,
   "package": "verdog_ai.cxxcompilediet",
-  "generated_from": "f1798dc2b96a6ac6e52401675a9219761b4fa3b3da55f2f4b1bae0f24faf7425",
+  "generated_from": "b3faf7f42d6b64ecfd8cda7d16663964a8c13a3824f307018ac2a78eb26e9ec7",
   "workflows": [
     {
       "subroutine": "main",
@@ -724,8 +724,8 @@
     {
       "path": "src/verdog_ai/cxxcompilediet/workflows/main/requirements.txt",
       "ownership": "user",
-      "size": 124,
-      "sha256": "df042595fc0c2351d7e322c82b29d9dfba554622055dbd38b7d1e69eef0d9a06"
+      "size": 44,
+      "sha256": "f1a9b515e9c95c4291d42b89f99c0c078fac23bfda646c2c7e14842a0ce4f983"
     },
     {
       "path": "src/verdog_ai/cxxcompilediet/workflows/main/sessions/__init__.py",
