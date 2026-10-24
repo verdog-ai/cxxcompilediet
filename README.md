@@ -29,9 +29,9 @@ blindly.
   `verdog generate` and `verdog analyze`.
 - [Codex](https://learn.chatgpt.com/docs/codex/cli#get-started-with-codex-cli),
   the provider of the workflow's `agent` profile.
-- [plumbcheck](https://github.com/drexlerd/plumbcheck) with its Codex hooks:
-  `plumbcheck hooks install --codex`. The hooks lint each edit of the agent
-  in a repository that has a `plumbcheck.yml`.
+- [peachycheck](https://github.com/drexlerd/peachycheck) with its Codex hooks:
+  `peachycheck hooks install --codex`. The hooks lint each edit of the agent
+  in a repository that has a `peachycheck.yml`.
 - CMake, Ninja (or the generator your configure command names) and a C++
   compiler; Linux, since the measurement uses `wait4`.
 
@@ -97,10 +97,10 @@ rules file.
 `propose` is one round's change: the agent's reply, then a check outside the
 agent's sandbox. The reply must end with a JSON object
 `{"repo", "idea", "hypothesis"}`; exactly one repository, the named
-one, may have changed; and if that repository has a `plumbcheck.yml`, the
+one, may have changed; and if that repository has a `peachycheck.yml`, the
 files changed since the run's base must be free of findings
-(`plumbcheck lint`); without one the attempt records
-`no plumbcheck.yml, lint skipped`. Findings go back to the agent, at most
+(`peachycheck lint`); without one the attempt records
+`no peachycheck.yml, lint skipped`. Findings go back to the agent, at most
 twice; then the round is rejected and its change reverted.
 
 Termination is certified by `verdog analyze` with three integer features:
@@ -131,7 +131,7 @@ and attempts, and the patched rules file's path.
 - A change is measured in the changed repository only, not in the
   repositories that depend on it.
 - `peak_rss_mb` counts each command with its maximum RSS for its whole run.
-- plumbcheck's clang-tidy needs `build/compile_commands.json` inside the
+- peachycheck's clang-tidy needs `build/compile_commands.json` inside the
   repository; the run's build directories are outside the worktrees, so it
   does not run in the check.
 

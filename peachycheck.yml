@@ -1,4 +1,4 @@
-# plumbcheck's configuration (https://github.com/drexlerd/plumbcheck): only
+# peachycheck's configuration (https://github.com/drexlerd/peachycheck): only
 # what differs from its defaults; every linter of its catalogue runs on the
 # files it checks. The linters read this repository's own configurations.
 
@@ -13,3 +13,6 @@ GENERATED:
 # Only the syntax (S0) and one statement per line (S7); j2lint's layout
 # rules (spacing, indentation, variable names) are not ours.
 J2LINT_ARGUMENTS: [--ignore, S1, S2, S3, S4, S5, S6, V1, V2, --]
+
+# pyright resolves imports in the workflow environment `verdog sync` creates.
+PYTHON_PYRIGHT_PYTHON: .verdog/environments/main/bin/python
