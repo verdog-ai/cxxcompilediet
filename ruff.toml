@@ -5,7 +5,7 @@
 line-length = 80
 # The oldest Python the organization supports.
 target-version = "py312"
-# `plumbcheck lint` passes the files; the excludes below still apply.
+# `peachycheck lint` passes the files; the excludes below still apply.
 force-exclude = true
 # Imported workflows (external/) and the generated declarations (__init__.py)
 # belong to their own repositories and to the Verdog compiler.

@@ -1,4 +1,4 @@
-# The repository's own checks and tests; plumbcheck only lints (standards.yml).
+# The repository's own checks and tests; peachycheck only lints (standards.yml).
 # pyright and pytest use the first workflow environment that has pytest,
 # else the first one (pytest added on top).
 name: tests

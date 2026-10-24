@@ -2,8 +2,8 @@
 
 The reply must name the change; exactly one repository, the named one, may
 have changed; and the changed files must be free of the findings of the
-repository's linters (``plumbcheck lint`` since the run's base), if the
-repository has a ``plumbcheck.yml``. Findings go back to the agent while
+repository's linters (``peachycheck lint`` since the run's base), if the
+repository has a ``peachycheck.yml``. Findings go back to the agent while
 ``REPAIRS`` allows; then the round is rejected and its change reverted.
 """
 
@@ -12,7 +12,7 @@ from dataclasses import replace
 from pathlib import Path
 from typing import Any, cast
 
-from plumbcheck import linting
+from peachycheck import linting
 from verdog_runtime.declarations import Success
 
 from verdog_ai.cxxcompilediet import diet
@@ -21,7 +21,7 @@ from verdog_ai.cxxcompilediet.subroutines.propose.repairs import REPAIRS
 
 from . import Context, Input, Result, State
 
-NO_LINT = "no plumbcheck.yml, lint skipped"
+NO_LINT = "no peachycheck.yml, lint skipped"
 
 
 def visit_impl(input: Input, state: State, context: Context, /) -> Result:
@@ -73,7 +73,7 @@ def parse(reply: str, names: list[str]) -> tuple[Proposal | None, list[str]]:
 
 def lint_errors(root: Path, base: str) -> tuple[str, list[str]]:
     """What linting said, and its findings in the files changed since base."""
-    if not (root / "plumbcheck.yml").is_file():
+    if not (root / "peachycheck.yml").is_file():
         return NO_LINT, []
     findings = linting.lint_errors(root, base)
     return f"{len(findings)} findings" if findings else "clean", findings

@@ -188,13 +188,13 @@ def test_keep_revert_stagnation_explore_stop(tmp_path: Path) -> None:
     assert outcome.branch in git(repo, "branch", "--list", outcome.branch)
 
 
-def test_lint_runs_only_with_a_plumbcheck_yml(
+def test_lint_runs_only_with_a_peachycheck_yml(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     lint = Mock(return_value=["a.cpp:1: finding"])
     monkeypatch.setattr(check.linting, "lint_errors", lint)
     assert check.lint_errors(tmp_path, "base") == (check.NO_LINT, [])
-    (tmp_path / "plumbcheck.yml").write_text("")
+    (tmp_path / "peachycheck.yml").write_text("")
     assert check.lint_errors(tmp_path, "base") == (
         "1 findings",
         ["a.cpp:1: finding"],

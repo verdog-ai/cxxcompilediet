@@ -15,7 +15,7 @@ Try one idea that the rules do not cover, and state its hypothesis.
 Lower {{ config.metric }} by applying the rules where they help most.
 {% endif %}
 
-Make exactly one change, in one repository, that keeps the behaviour and the public API. Do not commit. Check that the translation units you touch still compile (their commands are in compile_commands.json of the repository's build directory). After your reply the change is linted with the repository's plumbcheck configuration, rebuilt from scratch and tested; it is kept only if {{ config.metric }} drops by at least {{ "%.1f" | format(config.threshold * 100) }}%.
+Make exactly one change, in one repository, that keeps the behaviour and the public API. Do not commit. Check that the translation units you touch still compile (their commands are in compile_commands.json of the repository's build directory). After your reply the change is linted with the repository's peachycheck configuration, rebuilt from scratch and tested; it is kept only if {{ config.metric }} drops by at least {{ "%.1f" | format(config.threshold * 100) }}%.
 
 Reply with one JSON object and nothing after it:
 
